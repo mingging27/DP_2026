@@ -8,7 +8,7 @@ public class BookShelf implements Iterable<Book> {
     private List<Book> books;
 
     public BookShelf(int initialsize) {
-        this.books = new ArrayList<>(initialsize);
+        this.books = new ArrayList<>(initialsize);  //책장의 크기를 넘어도 자동으로 늘어나는 ArrayList 사용
     }
 
     public Book getBookAt(int index) {
@@ -16,7 +16,7 @@ public class BookShelf implements Iterable<Book> {
     }
 
     public void appendBook(Book book) {
-        books.add(book);
+        books.add(book);    //add 메서드
     }
 
     public int getLength() {

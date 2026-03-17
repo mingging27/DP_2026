@@ -3,7 +3,7 @@ package ch01.Sample;
 import java.util.Iterator;
 
 public class BookShelf implements Iterable<Book> {
-    private Book[] books;
+    private Book[] books;   //배열
     private int last = 0;
 
     public BookShelf(int maxsize) {
@@ -11,11 +11,11 @@ public class BookShelf implements Iterable<Book> {
     }
 
     public Book getBookAt(int index) {
-        return books[index];
+        return books[index];    //배열의 인덱스로 리턴
     }
 
     public void appendBook(Book book) {
-        this.books[last] = book;
+        this.books[last] = book;    //인덱스로 책 추가
         last++;
     }
 
