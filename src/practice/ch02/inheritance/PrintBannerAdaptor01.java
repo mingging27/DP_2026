@@ -1,6 +1,6 @@
 package practice.ch02.inheritance;
 
-// 어댑터 (타겟 인터페이스를)
+// 어댑터 (타겟 인터페이스를) : Banner 상송 , Print 인터페이스 구현
 public class PrintBannerAdaptor01 extends Banner implements Print {
     // 1. 인자가 없는 생성자는 자동으로 만들어짐
     // 2. 생성자는 상속 X
@@ -15,7 +15,6 @@ public class PrintBannerAdaptor01 extends Banner implements Print {
 
     @Override
     public void printStrong() {
-        Banner banner = new Banner("Hello World");
         showWithAster();
     }
 }

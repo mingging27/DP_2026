@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
+// 어댑터
 public class FileProperties implements FileIO {
     Properties property = new Properties();
 
@@ -14,7 +15,7 @@ public class FileProperties implements FileIO {
     }
 
     @Override
-    public void writeToFile(String filename) throws IOException {
+    public void writeToFile(String filename) throws IOException { //어댑티에게 위임
         property.store(new FileWriter(filename), "written by FileProperties");
     }
 
