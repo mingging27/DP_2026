@@ -41,13 +41,13 @@ public class Main {
             System.out.printf(book.getName() + " / " + book.getGenre() + " / " + book.getYear() + "년 / " + book.getPrice() + "원\n");
         }
 
-        //출판 연도 역순 아이터레이터
-        System.out.println("\n** 출판 연도 역순 아이터레이터 **");
+        // 출판 연도 역순 아이터레이터
+        // System.out.println("\n** 출판 연도 역순 아이터레이터 **");
 
-        it = bookShelf.iteratorByYear();
-        while (it.hasNext()) {
-            Book book = it.next();
-            System.out.printf(book.getName() + " / " + book.getGenre() + " / " + book.getYear() + "년 / " + book.getPrice() + "원\n");
-        }
+        // Iterator<Book> it = bookShelf.iteratorByYear();
+        // while (it.hasNext()) {
+        //     Book book = it.next();
+        //     System.out.printf(book.getName() + " / " + book.getGenre() + " / " + book.getYear() + "년 / " + book.getPrice() + "원\n");
+        // }
     }
 }

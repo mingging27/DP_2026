@@ -42,7 +42,6 @@ public class YearIterator implements Iterator<Book> {
         
         Book book = bookShelf.getBookAt(index); // index가 가리키는 책을 반환
         visited[index] = true; // 반환한 책은 방문 표시
-        
         return book; // index가 가리키는 책을 반환
     }
 }
