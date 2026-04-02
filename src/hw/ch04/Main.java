@@ -7,6 +7,8 @@ import hw.ch04.license.LicenseFactory;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("20230949 박민주");
+
         // Step 1
         Factory factory1 = new IDCardFactory("2026-01-15");
         Product card1 = factory1.create("Kim Youngjin");
