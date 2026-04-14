@@ -10,7 +10,7 @@ public class RandomStrategy implements Strategy {
     }
 
     @Override
-    public void study(boolean win) {
+    public void study(boolean win) {    // 이전 손 상관 X
     }
 
     @Override

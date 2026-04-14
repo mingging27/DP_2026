@@ -1,14 +1,15 @@
 package ch10.Sample;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) {    // args: 명령행 인자를 받는 변수 (문자열로 받음)
         if (args.length != 2) {
             System.out.println("Usage: java Main randomseed1 randomseed2");
             System.out.println("Example: java Main 314 15");
             System.exit(0);
         }
-        int seed1 = Integer.parseInt(args[0]);
-        int seed2 = Integer.parseInt(args[1]);
+        // 문자열을 정수로 변환
+        int seed1 = Integer.parseInt(args[0]);  // 111
+        int seed2 = Integer.parseInt(args[1]); // 222
         Player player1 = new Player("KIM", new WinningStrategy(seed1));
         Player player2 = new Player("LEE", new ProbStrategy(seed2));
         for (int i = 0; i < 10000; i++) {

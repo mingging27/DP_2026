@@ -14,11 +14,11 @@ public class Main {
         // }
 
         // 플레이어 2명 생성
-        Player player1 = new Player("박민주", new WinningStrategy(314)); // 부모 타입으로 생성함 -> 자식 객체 참조 가능 (다형성)
-        Player player2 = new Player("홍길동", new WinningStrategy(159));
+        Player player1 = new Player("박민주", new ProbStrategy(314)); // 부모 타입으로 생성함 -> 자식 객체 참조 가능 (다형성)
+        Player player2 = new Player("홍길동", new WinningStrategy(159));    // 하드 코드 되었음 (코드 상에 직접 입력되어있음) -> 변경을 위해서는 컴파일 새로 해야함
 
         // 게임 시키기
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             Hand h1 = player1.nextHand();
             Hand h2 = player2.nextHand();
 
