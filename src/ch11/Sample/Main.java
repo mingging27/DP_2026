@@ -7,11 +7,18 @@ public class Main {
         Directory bindir = new Directory("bin");
         Directory tmpdir = new Directory("tmp");
         Directory usrdir = new Directory("usr");
+        Directory pmj = new Directory("pmj");
+
         rootdir.add(bindir);
         rootdir.add(tmpdir);
         rootdir.add(usrdir);
+        rootdir.add(pmj);
+
         bindir.add(new File("vi", 10000));
         bindir.add(new File("latex", 20000));
+        pmj.add(new File("pmj1", 100));
+        pmj.add(new File("pmj2", 650));
+        pmj.add(new File("pmj3", 40));
         rootdir.printList();
         System.out.println();
 
