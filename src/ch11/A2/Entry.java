@@ -1,10 +1,10 @@
 package ch11.A2;
 
 public abstract class Entry {
-    private Entry parent;
+    private Entry parent; // parent 속성 추가
 
     // 부모를 설정한다
-    protected void setParent(Entry parent) {
+    protected void setParent(Entry parent) {    // parent를 인자로 받아서 기록
         this.parent = parent;
     }
 
@@ -31,12 +31,12 @@ public abstract class Entry {
     // 전체 경로를 가져온다 
     public String getFullName() {
         StringBuilder fullname = new StringBuilder();
-        Entry entry = this;
+        Entry entry = this; // 마지막 요소부터 시작
         do {
-            fullname.insert(0, entry.getName());
-            fullname.insert(0, "/");
-            entry = entry.parent;
-        } while (entry != null);
+            fullname.insert(0, entry.getName()); // 가장 앞에 자기 이름 insert
+            fullname.insert(0, "/"); // 가장 앞에 "/" insert
+            entry = entry.parent; // 부모로 이동
+        } while (entry != null);    // 부모가 null이 될 때까지 반복
         return fullname.toString();
     }
 }

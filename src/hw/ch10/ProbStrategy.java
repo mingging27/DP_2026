@@ -1,4 +1,4 @@
-package ch10.Sample;
+package hw.ch10;
 
 import java.util.Random;
 
@@ -29,10 +29,10 @@ public class ProbStrategy implements Strategy {
         }
         prevHandValue = currentHandValue;
         currentHandValue = handvalue;
-        return Hand.getHand(handvalue); // Hand 객체 반환
+        return Hand.getHand(handvalue);
     }
 
-    private int getSum(int handvalue) { // handvalue 현재 손의 값
+    private int getSum(int handvalue) {
         int sum = 0;
         for (int i = 0; i < 3; i++) {
             sum += history[handvalue][i];
@@ -45,7 +45,7 @@ public class ProbStrategy implements Strategy {
         if (win) {
             history[prevHandValue][currentHandValue]++;
         } else {
-            history[prevHandValue][(currentHandValue + 1) % 3]++;   // 패배 시: 이번 손 제외 나머지 손 카운트 ++
+            history[prevHandValue][(currentHandValue + 1) % 3]++;
             history[prevHandValue][(currentHandValue + 2) % 3]++;
         }
     }

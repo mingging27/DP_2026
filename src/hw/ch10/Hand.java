@@ -1,4 +1,4 @@
-package ch10.Sample;
+package hw.ch10;
 
 public enum Hand {
     // 가위 바위 보를 나타내는 세 개의 enum 상수
@@ -41,9 +41,9 @@ public enum Hand {
         if (this == h) {
             return 0;
         } else if ((this.handvalue + 1) % 3 == h.handvalue) {
-            return 1; // this가 이김
+            return 1;
         } else {
-            return -1;  // this가 짐
+            return -1;
         }
     }
 

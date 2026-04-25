@@ -1,10 +1,10 @@
-package ch10.Sample;
+package hw.ch10;
 
 import java.util.Random;
 
 public class WinningStrategy implements Strategy {
-    private Random random;  // 난수 생성기
-    private boolean won = false;    // 처음 손을 위한 디폴트 값
+    private Random random;
+    private boolean won = false;
     private Hand prevHand;
 
     public WinningStrategy(int seed) {
@@ -12,7 +12,7 @@ public class WinningStrategy implements Strategy {
     }
 
     @Override
-    public Hand nextHand() {   
+    public Hand nextHand() {
         if (!won) {
             prevHand = Hand.getHand(random.nextInt(3));
         }

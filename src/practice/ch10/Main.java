@@ -14,7 +14,7 @@ public class Main {
         // }
 
         // 플레이어 2명 생성
-        Player player1 = new Player("박민주", new ProbStrategy(314)); // 부모 타입으로 생성함 -> 자식 객체 참조 가능 (다형성)
+        Player player1 = new Player("박민주", new RandomStrategy(314)); // 부모 타입으로 생성함 -> 자식 객체 참조 가능 (다형성)
         Player player2 = new Player("홍길동", new WinningStrategy(159));    // 하드 코드 되었음 (코드 상에 직접 입력되어있음) -> 변경을 위해서는 컴파일 새로 해야함
 
         // 게임 시키기
