@@ -28,7 +28,7 @@ public class File extends Entry {
     }
 
     @Override
-    protected List<Entry> search(String keyword) {
+    public List<Entry> search(String keyword) {
         List<Entry> entries = new ArrayList<>();
         if (getName().contains(keyword)) {
             entries.add(this);

@@ -40,7 +40,7 @@ public class Directory extends Entry {
     }
 
     @Override
-    protected List<Entry> search(String keyword) {
+    public List<Entry> search(String keyword) {
         List<Entry> entries = new ArrayList<>();
 
         // keyword가 포함되면 자신을 추가
@@ -51,7 +51,7 @@ public class Directory extends Entry {
         for (Entry entry: directory) {
             entries.addAll(entry.search(keyword));
         }
-        
+
         return entries;
     }
 }

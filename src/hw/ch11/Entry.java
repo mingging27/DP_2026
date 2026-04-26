@@ -45,5 +45,5 @@ public abstract class Entry {
 
     // search 메소드 추가
 
-    protected abstract List<Entry> search(String keyword);
+    public abstract List<Entry> search(String keyword);
 }
