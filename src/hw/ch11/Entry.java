@@ -1,7 +1,6 @@
 package hw.ch11;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public abstract class Entry {
     private Entry parent; // parent 속성 추가
