@@ -11,4 +11,5 @@ public abstract class Display {
             System.out.println(getRowText(i));
         }
     }
+    
 }

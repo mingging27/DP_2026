@@ -1,11 +1,8 @@
 package hw.ch12;
 
 public class NumberedBorder extends Border {
-    private int number;  // 번호
-
     public NumberedBorder(Display display) {
         super(display);
-        this.number = 0;
     }
     
     @Override
@@ -20,6 +17,6 @@ public class NumberedBorder extends Border {
 
     @Override
     public String getRowText(int row) {
-        return String.format("%2d| ", 1+number++) + display.getRowText(row);
+        return String.format("%2d| ", 1+row) + display.getRowText(row);
     }
 }
