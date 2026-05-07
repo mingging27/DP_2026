@@ -99,9 +99,9 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     // textUser 또는 textPass의 변경이 있다 
     // 각 Colleage의 활성/비활성을 판정한다
     private void userpassChanged() {
-        if (textUser.getText().length() > 0) {  // 사용자 이름이 입력됐다면
+        if (textUser.getText().length() > 3) {  // 사용자 이름이 입력됐다면
             textPass.setColleagueEnabled(true);
-            if (textPass.getText().length() > 0) { // 비밀번호도 입력됐다면
+            if (textPass.getText().length() > 3) { // 비밀번호도 입력됐다면
                 buttonOk.setColleagueEnabled(true);
             } else {
                 buttonOk.setColleagueEnabled(false);
