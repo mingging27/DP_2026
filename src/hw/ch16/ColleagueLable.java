@@ -19,13 +19,13 @@ public class ColleagueLable extends Label implements Colleague {
     @Override
     public void setColleagueEnabled(boolean enabled) {
         setEnabled(enabled);
-        
+
         if (enabled) {
             setForeground(Color.blue);
             setText("● 로그인 가능");
         } else {
-            setForeground(Color.red);
+            setForeground(Color.gray);
             setText("● 로그인 불가");
-        }        
+        }                
     }
 }

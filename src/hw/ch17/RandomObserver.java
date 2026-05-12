@@ -1,6 +1,8 @@
 package hw.ch17;
 
 public class RandomObserver implements Observer {
+
+    @Override
     public void update(NumberGenerator generator) {
         System.out.println("RandomObserver:");
         int count = generator.getNumber();
@@ -14,7 +16,6 @@ public class RandomObserver implements Observer {
         } else {
             System.out.println("");
         }
-
 
         try {
             Thread.sleep(100);
