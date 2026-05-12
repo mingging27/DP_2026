@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Label;
 
 public class ColleagueLable extends Label implements Colleague {
-    Mediator mediator;
 
     public ColleagueLable(String caption) {
         super(caption);
@@ -13,7 +12,7 @@ public class ColleagueLable extends Label implements Colleague {
     // Mediator를 설정한다 
     @Override
     public void setMediator(Mediator mediator) {
-        this.mediator = mediator;
+        // Mediator는 Label이 사용할 일이 없으므로 아무것도 하지 않는다
     }
 
     // Mediator에서 활성/비활성을 지시한다
