@@ -23,6 +23,7 @@ public class BigString {
         BigCharFactory factory = BigCharFactory.getInstance();
         bigchars = new BigChar[string.length()];
         for (int i = 0; i < bigchars.length; i++) {
+            // factory 사용
             bigchars[i] = factory.getBigChar(string.charAt(i));
         }
     }
@@ -31,6 +32,7 @@ public class BigString {
     private void initUnshared(String string) {
         bigchars = new BigChar[string.length()];
         for (int i = 0; i < bigchars.length; i++) {
+            // factory 사용하지 않고 BigChar 인스턴스 생성
             bigchars[i] = new BigChar(string.charAt(i));
         }
     }
