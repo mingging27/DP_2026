@@ -1,6 +1,6 @@
 package ch20.Sample;
 
-import java.io.IOException;
+import vajava.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 

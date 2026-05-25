@@ -1,4 +1,4 @@
-package ch19.Sample;
+package hw.ch19;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Main {
             for (int hour = 0; hour < 24; hour++) {
                 frame.setClock(hour);   // 시간 설정 
                 try {
-                    Thread.sleep(1000); // 1초
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                 }
             }

@@ -1,4 +1,4 @@
-package ch19.Sample;
+package hw.ch19;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -49,11 +49,10 @@ public class SafeFrame extends Frame implements ActionListener, Context {
         buttonExit.addActionListener(this);
     }
 
-    // 버튼이 눌리면 여기로 온다 (AWT가 자동으로 actionPerformed()를 호출)
+    // 버튼이 눌리면 여기로 온다
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());
-        // 버튼 종류 확인
         if (e.getSource() == buttonUse) {		// 금고 사용 버튼
             state.doUse(this);
         } else if (e.getSource() == buttonAlarm) {	// 비상벨 버튼 
@@ -70,13 +69,10 @@ public class SafeFrame extends Frame implements ActionListener, Context {
     // 시간 설정 
     @Override
     public void setClock(int hour) {
-        // 시간 설정 및 문자열 출력
-        String clockstring = String.format("현재 시간은 %02d:00", hour);    
+        String clockstring = String.format("현재 시간은 %02d:00", hour);
         System.out.println(clockstring);
         textClock.setText(clockstring);
-
-        // 상태에 따라 시간 설정
-        state.doClock(this, hour);
+        state.doClock(this, hour); // 상태에 따라 시간 설정 -> state에 위임
     }
 
     // 상태 변화 
