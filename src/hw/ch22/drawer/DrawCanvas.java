@@ -1,17 +1,16 @@
-package ch22.Sample.drawer;
+package hw.ch22.drawer;
 
-import ch22.Sample.command.MacroCommand;
+import hw.ch22.command.MacroCommand;
 
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 
-// Canvas 상속, Drawable 인터페이스 구현
 public class DrawCanvas extends Canvas implements Drawable {
     // 그리는 색 
-    private Color color = Color.red;
+    private Color color;
     // 그리는 점의 반지름 
-    private int radius = 6;
+    private int radius;
     // 이력 
     private MacroCommand history;
 
@@ -20,6 +19,14 @@ public class DrawCanvas extends Canvas implements Drawable {
         setSize(width, height);
         setBackground(Color.white);
         this.history = history;
+        init();
+    }
+
+    // 초기화
+    @Override
+    public void init() {
+        color = Color.red;
+        radius = 6;
     }
 
     // 이력 전체 다시 그리기 
@@ -34,5 +41,11 @@ public class DrawCanvas extends Canvas implements Drawable {
         Graphics g = getGraphics();
         g.setColor(color);
         g.fillOval(x - radius, y - radius, radius * 2, radius * 2);
+    }
+
+    // 색 설정
+    @Override
+    public void setColor(Color color) {
+        this.color = color;
     }
 }

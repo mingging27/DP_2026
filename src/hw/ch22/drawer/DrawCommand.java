@@ -1,6 +1,6 @@
-package ch22.Sample.drawer;
+package hw.ch22.drawer;
 
-import ch22.Sample.command.Command;
+import hw.ch22.command.Command;
 import java.awt.Point;
 
 public class DrawCommand implements Command {
@@ -19,6 +19,6 @@ public class DrawCommand implements Command {
     // 실행
     @Override
     public void execute() {
-        drawable.draw(position.x, position.y); 
+        drawable.draw(position.x, position.y);
     }
 }
