@@ -16,11 +16,12 @@ public class BigChar {
         try {
             String filename = "big" + charname + ".txt";
             StringBuilder sb = new StringBuilder();
+            // 확장 for문
             for (String line: Files.readAllLines(Path.of(filename))) {
-                sb.append(line);
+                sb.append(line);    // 한줄씩 내용 + '\n' 추가
                 sb.append("\n");
             }
-            this.fontdata = sb.toString();
+            this.fontdata = sb.toString();  // StringBuilder의 내용을 String으로 변환 -> fontdata에 저장
         } catch (IOException e) {
             this.fontdata = charname + "?";
         }
@@ -29,5 +30,9 @@ public class BigChar {
     // 큰 문자를 표시한다
     public void print() {
         System.out.print(fontdata);
+    }
+
+    public void print(String colorCode) {
+        System.out.print(colorCode + fontdata + "\u001B[0m");
     }
 }
