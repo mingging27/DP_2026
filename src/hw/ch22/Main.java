@@ -2,7 +2,6 @@ package hw.ch22;
 
 import hw.ch22.command.*;
 import hw.ch22.drawer.*;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

@@ -22,13 +22,14 @@ public class DrawCanvas extends Canvas implements Drawable {
         init();
     }
 
-    // 초기화
+    // 초기화 
     @Override
     public void init() {
         color = Color.red;
         radius = 6;
+        history.append(new ColorCommand(this, color));
     }
-
+    
     // 이력 전체 다시 그리기 
     @Override
     public void paint(Graphics g) {
