@@ -16,13 +16,14 @@ public abstract class Support {
     }
 
     // 트러블 해결 절차를 결정한다
+    // 템플릿 메소드
     public void support(Trouble trouble) {
-        if (resolve(trouble)) {
-            done(trouble);
-        } else if (next != null) {
-            next.support(trouble);
-        } else {
-            fail(trouble);
+        if (resolve(trouble)) { // 자기가 해결하려고 함
+            done(trouble);  // 해결햇다고 선언
+        } else if (next != null) {  // 자기가 해결 못 햇는데, 뒷 사람이 잇으면
+            next.support(trouble);  // 뒷사람에게 떠넘김 (재귀적 호출)
+        } else {    // 자기도 해결 못 햇고, 뒷 사람도 없으면
+            fail(trouble); // 해결 못 햇다고 선언
         }
     }
 

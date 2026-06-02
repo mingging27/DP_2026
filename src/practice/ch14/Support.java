@@ -1,7 +1,8 @@
-package ch14.A3;
+package practice.ch14;
+
 
 public abstract class Support {
-    private String name;    // 이 트러블 해결자의 이름
+    private String name;    // 이 트러블 해결자 이름
     private Support next;   // 떠넘길 곳
 
     public Support(String name) {
@@ -15,25 +16,25 @@ public abstract class Support {
         return next;
     }
 
-    // 트러블 해결 절차를 결정한다 
+    // 트러블 해결 절차를 결정한다
+    // 템플릿 메소드
     public void support(Trouble trouble) {
-        for (Support obj = this; true; obj = obj.next) {
-            if (obj.resolve(trouble)) { // 성공
-                obj.done(trouble);
-                break; // 루프 탈출
-            } else if (obj.next == null) { // 현재 obj가 마지막인지 확인
-                obj.fail(trouble);  // 실패
-                break;  // 루프 탈출
-            }
+        if (resolve(trouble)) { // 자기가 해결하려고 함
+            done(trouble);  // 해결햇다고 선언
+        } else if (next != null) {  // 자기가 해결 못 햇는데, 뒷 사람이 잇으면
+            next.support(trouble);  // 뒷사람에게 떠넘김 (재귀적 호출)
+        } else {    // 자기도 해결 못 햇고, 뒷 사람도 없으면
+            fail(trouble); // 해결 못 햇다고 선언
         }
     }
 
+    // 트러블 해결자의 문자열 표현
     @Override
     public String toString() {
         return "[" + name + "]";
     }
 
-    // 해결하려고 한다 
+    // 해결하려고 한다
     protected abstract boolean resolve(Trouble trouble);
 
     // 해결했다 
@@ -41,9 +42,8 @@ public abstract class Support {
         System.out.println(trouble + " is resolved by " + this + ".");
     }
 
-    // 해결되지 않았다
+    // 해결되지 않았다 
     protected void fail(Trouble trouble) {
         System.out.println(trouble + " cannot be resolved.");
     }
 }
-

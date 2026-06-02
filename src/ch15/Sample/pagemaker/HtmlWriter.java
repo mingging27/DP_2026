@@ -10,7 +10,7 @@ public class HtmlWriter {
         this.writer = writer;
     }
 
-    // 타이틀 출력 
+    // 타이틀 출력 - 제일 먼저 호출되어야 하는 메소드
     public void title(String title) throws IOException {
         writer.write("<!DOCTYPE html>");
         writer.write("<html>");
@@ -29,7 +29,7 @@ public class HtmlWriter {
         writer.write("\n");
     }
 
-    // 링크 출력
+    // 링크 출력 (\")
     public void link(String href, String caption) throws IOException {
         paragraph("<a href=\"" + href + "\">" + caption + "</a>");
     }
